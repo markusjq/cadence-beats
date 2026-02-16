@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cadence-beats"
+version = "0.1.0"
+description = "Generate Spotify playlists matched to your running cadence zones from Garmin data"
+requires-python = ">=3.10"
+dependencies = [
+    "garminconnect>=0.2.25",
+    "fitparse>=1.0.1",
+    "spotipy>=2.24.0",
+    "click>=8.1.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+cadence-beats = "cadence_beats.cli:cli"
+
+[tool.setuptools.packages.find]
+include = ["cadence_beats*"]
